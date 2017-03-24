@@ -2,10 +2,11 @@ marssurvive={breath_timer=0,player_sp={},air=21,player_space={},
 itemdroptime=tonumber(minetest.setting_get("item_entity_ttl")),
 aliens={},aliens_max=4}
 
-
 if marssurvive.itemdroptime=="" or marssurvive.itemdroptime==nil then
 	marssurvive.itemdroptime=880
 else
+-- hacky temporary fix to stop this from crashing when hook_tmp_time isn't set:
+hook_tmp_time=880
 	marssurvive.itemdroptime=hook_tmp_time-20
 end
 
